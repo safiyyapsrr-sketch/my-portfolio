@@ -1,55 +1,84 @@
+import { profile, projects } from "@/data/portfolio";
+import { delay } from "@/lib/motion";
+import { ArrowUpRight, Spark } from "./icons";
+import ProjectMedia from "./project-visuals";
+import SectionHeading from "./section-heading";
+
+const spans: Record<string, "5" | "6" | "7"> = {
+  safepath: "7",
+  whbs: "5",
+  "animal-intrusion": "5",
+  "movie-search": "7",
+  chatbot: "6",
+  "leave-letter": "6",
+};
+
 export default function ProjectsSection() {
-
-  const projects = [
-    {
-      title: "Animal Intrusion Detection & Prevention System",
-      description:
-        "AI and IoT system that detects wild animals entering farms using CNN and YOLO algorithms and alerts farmers with a siren mechanism.",
-    },
-    {
-      title: "Leave Letter Management System",
-      description:
-        "Web application that allows students to submit leave requests online and authorities to approve them digitally.",
-    },
-    {
-      title: "Smart AI Chatbot for College",
-      description:
-        "AI chatbot that answers queries about college facilities, placements, admissions, and fees.",
-    },
-    {
-      title: "Weather App",
-      description:
-        "Python-based weather application that fetches real-time weather data using an API and stores it in a database.",
-    },
-  ];
-
   return (
-    <section id="projects" style={{ padding: "60px", textAlign: "center" }}>
-      <h2 style={{ fontSize: "30px", marginBottom: "30px" }}>Projects</h2>
+    <section id="projects" className="section" aria-labelledby="projects-title">
+      <div className="wrap">
+        <SectionHeading num="03" label="Projects" id="projects-title">
+          Problems I&apos;ve tried to <em>solve</em>, one build at a time.
+        </SectionHeading>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "20px",
-          flexWrap: "wrap",
-        }}
-      >
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            style={{
-              width: "260px",
-              padding: "20px",
-              borderRadius: "10px",
-              backgroundColor: "#ffffff",
-              boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-            }}
+        <div className="project-grid">
+          {projects.map((project, index) => (
+            <article
+              key={project.id}
+              id={`project-${project.id}`}
+              className="project-card"
+              data-span={spans[project.id] ?? "6"}
+              data-reveal
+              style={delay((index % 2) * 100)}
+            >
+              <ProjectMedia visual={project.visual} />
+
+              <div className="project-body">
+                <div className="project-meta mono">
+                  <span>{project.category}</span>
+                  <span className="project-meta__num">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-sub">{project.subtitle}</p>
+                <p className="project-desc">{project.description}</p>
+
+                {project.badge ? (
+                  <p className="badge">
+                    <Spark />
+                    {project.badge}
+                  </p>
+                ) : null}
+
+                <ul className="tags">
+                  {project.tags.map((tag) => (
+                    <li key={tag} className="tag">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="projects-foot" data-reveal>
+          <p>
+            <span className="hero__dot" aria-hidden="true" />
+            More projects and explorations are in progress.
+          </p>
+          <a
+            href={profile.github}
+            className="btn btn--ghost"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-          </div>
-        ))}
+            Browse GitHub
+            <ArrowUpRight />
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -1,30 +1,51 @@
+import { aboutParagraphs, interests } from "@/data/portfolio";
+import { delay } from "@/lib/motion";
+import SectionHeading from "./section-heading";
+
 export default function AboutSection() {
   return (
-    <section
-      id="about"
-      style={{
-        padding: "60px",
-        textAlign: "center",
-      }}
-    >
-      <h2 style={{ fontSize: "30px", marginBottom: "20px" }}>
-        About Me
-      </h2>
+    <section id="about" className="section tone-invert" aria-labelledby="about-title">
+      <div className="wrap about__grid">
+        <div className="about__side">
+          <SectionHeading num="01" label="About" id="about-title">
+            Curious by nature, <em>technical</em> by training.
+          </SectionHeading>
 
-      <p style={{ maxWidth: "700px", margin: "0 auto", fontSize: "18px" }}>
-        I am a 3rd year B.E. Computer Science & Technology student at
-        Vivekanandha College of Engineering for Women (Autonomous).
-        I am passionate about Full Stack Development and Artificial Intelligence
-        and enjoy building technology solutions that solve real-world problems.
-      </p>
+          <div data-reveal style={delay(120)}>
+            <p className="interest-label mono">Where my interests meet</p>
+            <ul className="tags">
+              {interests.map((interest) => (
+                <li key={interest} className="tag">
+                  {interest}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
-      <p style={{ maxWidth: "700px", margin: "20px auto", fontSize: "18px" }}>
-        My interests include Artificial Intelligence, Machine Learning,
-        Data Analysis, and Web Development. I have worked on projects
-        involving IoT-based smart systems, AI-powered chatbots, and
-        web applications. I continuously work on improving my
-        programming and development skills.
-      </p>
+        <div>
+          <p className="about__lead" data-reveal>
+            {aboutParagraphs.lead}
+          </p>
+
+          <div className="about__cols">
+            <p data-reveal style={delay(80)}>
+              {aboutParagraphs.communication}
+            </p>
+            <p data-reveal style={delay(160)}>
+              {aboutParagraphs.adaptable}
+            </p>
+          </div>
+
+          <blockquote className="about__quote" data-reveal>
+            {aboutParagraphs.quote}
+          </blockquote>
+
+          <p className="about__closing" data-reveal>
+            {aboutParagraphs.closing}
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

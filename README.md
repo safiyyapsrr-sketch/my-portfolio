@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Safiyya Muhsina M — Portfolio
 
-## Getting Started
+Personal portfolio of Safiyya Muhsina M, a Computer Science and Technology student exploring technology, product, business, marketing and project management.
 
-First, run the development server:
+Live site: <https://safiyyamuhsina.vercel.app>
+
+## Stack
+
+- [Next.js](https://nextjs.org) 16 (App Router) and React 19
+- TypeScript (strict)
+- Tailwind CSS v4 (design tokens in `app/globals.css`)
+- Fonts via `next/font`: Instrument Serif (display), Geist (text), Geist Mono (labels)
+- No animation or UI libraries. Motion is CSS plus one small `IntersectionObserver`.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+app/
+  layout.tsx          fonts, metadata, no-flash theme script
+  page.tsx            page composition
+  globals.css         tokens, light/dark themes, component styles, keyframes
+  icon.svg            "SM" monogram favicon
+components/           one file per section, plus navbar, theme toggle, icons
+data/portfolio.ts     all content (edit this to update the site)
+lib/motion.ts         stagger-delay helper
+public/images/        portrait and project screenshots
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Updating content
 
-## Learn More
+Everything shown on the page lives in `data/portfolio.ts`: profile details, skills, projects, internship, education, hackathons, certificates, activities and languages.
 
-To learn more about Next.js, take a look at the following resources:
+- **Add a project link:** add `repo` / `demo` fields to a project in `data/portfolio.ts` and render them in `components/projects-section.tsx`. No links are shown today because none have been verified.
+- **Replace the portrait:** drop a new image into `public/images/` and update `images.portrait` in the data file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Themes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Dark and light themes are driven by `data-theme` on `<html>`. A tiny inline script in `app/layout.tsx` applies the saved (or system) preference before first paint, so there is no flash. The choice is stored in `localStorage` under `theme`.
 
-## Deploy on Vercel
+## Accessibility
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Skip link, semantic landmarks, visible focus states, keyboard-operable navigation and mobile menu (Escape closes, focus is kept inside), `aria-current` for the active section, descriptive link labels, and full `prefers-reduced-motion` support. Content stays visible if JavaScript is unavailable.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Deployed on [Vercel](https://vercel.com). With the default Git integration, pushes to the production branch (`main`) deploy to production and other branches get preview deployments.

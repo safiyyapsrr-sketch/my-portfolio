@@ -1,54 +1,50 @@
+import { skillGroups, strengths } from "@/data/portfolio";
+import { delay } from "@/lib/motion";
+import SectionHeading from "./section-heading";
+
 export default function SkillsSection() {
-  const skills = [
-    "Python",
-    "C++",
-    "Java",
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Data Structures",
-    "MERN Stack",
-    "MongoDB",
-    "Machine Learning (Basics)",
-    "Artificial Intelligence",
-    "Generative AI",
-    "REST API Integration",
-  ];
-
   return (
-    <section
-      id="skills"
-      style={{
-        padding: "60px",
-        textAlign: "center",
-        backgroundColor: "#f5f5f5",
-      }}
-    >
-      <h2 style={{ fontSize: "30px", marginBottom: "20px" }}>
-        Technical Skills
-      </h2>
+    <section id="skills" className="section" aria-labelledby="skills-title">
+      <div className="wrap">
+        <SectionHeading num="02" label="Skills" id="skills-title">
+          Tools I use, <em>strengths</em> I bring.
+        </SectionHeading>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "15px",
-          flexWrap: "wrap",
-        }}
-      >
-        {skills.map((skill) => (
-          <span
-            key={skill}
-            style={{
-              padding: "10px 15px",
-              backgroundColor: "#0f172a",
-              color: "white",
-              borderRadius: "20px",
-            }}
-          >
-            {skill}
-          </span>
-        ))}
+        <div className="skill-grid">
+          {skillGroups.map((group, index) => (
+            <article
+              key={group.title}
+              className="skill-card"
+              data-reveal
+              style={delay(index * 90)}
+            >
+              <div className="skill-card__head">
+                <h3 className="skill-card__title">{group.title}</h3>
+                <span className="skill-card__num mono">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <ul className="tags">
+                {group.items.map((item) => (
+                  <li key={item} className="tag">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div className="strengths-wrap">
+          <p className="strengths-label mono" data-reveal>
+            Professional strengths
+          </p>
+          <ul className="strengths" data-reveal style={delay(100)}>
+            {strengths.map((strength) => (
+              <li key={strength}>{strength}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

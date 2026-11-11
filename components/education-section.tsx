@@ -1,35 +1,47 @@
+import { education } from "@/data/portfolio";
+import { delay } from "@/lib/motion";
+import SectionHeading from "./section-heading";
+
 export default function EducationSection() {
   return (
-    <section
-      id="education"
-      style={{
-        padding: "60px",
-        textAlign: "center",
-      }}
-    >
-      <h2 style={{ fontSize: "30px", marginBottom: "30px" }}>
-        Education
-      </h2>
+    <section id="education" className="section" aria-labelledby="education-title">
+      <div className="wrap">
+        <SectionHeading num="05" label="Education" id="education-title">
+          Where I&apos;m <em>building</em> my foundation.
+        </SectionHeading>
 
-      <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "left" }}>
-        <h3>B.E. Computer Science & Technology</h3>
-        <p>
-          Vivekanandha College of Engineering for Women (Autonomous) <br />
-          2023 – 2027 <br />
-          CGPA: 7.9
-        </p>
+        <div className="edu-grid">
+          <div className="cgpa" data-reveal>
+            <span className="cgpa__num" aria-label={`CGPA ${education.cgpa}`}>
+              {education.cgpa}
+            </span>
+            <span className="cgpa__label mono">CGPA · B.E.</span>
+          </div>
 
-        <h3 style={{ marginTop: "20px" }}>Higher Secondary (HSC)</h3>
-        <p>
-          GRM Girls Higher Secondary School, Thiruvarur <br />
-          Percentage: 75%
-        </p>
+          <ul className="edu-list">
+            <li className="edu-row" data-reveal>
+              <p className="edu-row__when mono">{education.period}</p>
+              <div>
+                <h3 className="edu-row__title">{education.degree}</h3>
+                <p className="edu-row__meta">
+                  {education.school}, {education.place}
+                </p>
+                <p className="edu-row__score">CGPA {education.cgpa}</p>
+              </div>
+            </li>
 
-        <h3 style={{ marginTop: "20px" }}>SSLC</h3>
-        <p>
-          India International Matriculation School, Koothanallur <br />
-          Percentage: 85%
-        </p>
+            <li className="edu-row" data-reveal style={delay(100)}>
+              <p className="edu-row__when mono">{education.hsc.period}</p>
+              <div>
+                <h3 className="edu-row__title">{education.hsc.title}</h3>
+                <p className="edu-row__meta">
+                  {education.hsc.school}, {education.hsc.place}
+                </p>
+                <p className="edu-row__score">{education.hsc.score}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );

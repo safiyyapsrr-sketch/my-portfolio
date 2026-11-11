@@ -1,31 +1,68 @@
+import { experience } from "@/data/portfolio";
+import { delay } from "@/lib/motion";
+import { ArrowRight } from "./icons";
+import SectionHeading from "./section-heading";
+
 export default function ExperienceSection() {
   return (
-    <section
-      id="experience"
-      style={{
-        padding: "60px",
-        textAlign: "center",
-        backgroundColor: "#f5f5f5",
-      }}
-    >
-      <h2 style={{ fontSize: "30px", marginBottom: "30px" }}>
-        Internship Experience
-      </h2>
+    <section id="experience" className="section tone-invert" aria-labelledby="experience-title">
+      <div className="wrap">
+        <SectionHeading num="04" label="Experience" id="experience-title">
+          Learning on the <em>job</em>, in the real world.
+        </SectionHeading>
 
-      <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "left" }}>
-        <h3>Full Stack Development Intern</h3>
-        <p>
-          Completed an internship program on Full Stack Development at
-          <strong> StaxTech</strong>, gaining experience in web application
-          development and modern development tools.
-        </p>
+        <div className="timeline">
+          <article className="tl-item" data-reveal>
+            <div className="tl-when mono">
+              <strong>{experience.period}</strong>
+              {experience.location}
+            </div>
 
-        <h3 style={{ marginTop: "20px" }}>Research Paper Writing Internship</h3>
-        <p>
-          Completed an internship program on Research Paper Writing organized
-          by <strong>NoobTron</strong>, focusing on academic research methods
-          and technical documentation.
-        </p>
+            <div>
+              <h3 className="tl-role">{experience.role}</h3>
+              <p className="tl-org">
+                {experience.company} · {experience.project}
+              </p>
+
+              <ol className="tl-list">
+                {experience.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ol>
+
+              <ul className="tags">
+                {experience.tags.map((tag) => (
+                  <li key={tag} className="tag">
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+
+              <a href="#project-whbs" className="tl-link">
+                See the redesign
+                <ArrowRight />
+              </a>
+            </div>
+          </article>
+
+          <article className="tl-item tl-item--next" data-reveal style={delay(120)}>
+            <div className="tl-when mono">
+              <strong>Next</strong>
+              Open to opportunities
+            </div>
+            <div>
+              <h3 className="tl-role">The next chapter.</h3>
+              <p className="tl-next-text">
+                Looking for internships and full-time fresher roles where I can
+                keep learning, take ownership and contribute.
+              </p>
+              <a href="#contact" className="tl-link">
+                Let&apos;s talk
+                <ArrowRight />
+              </a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   );
