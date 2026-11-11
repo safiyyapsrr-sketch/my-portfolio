@@ -1,6 +1,6 @@
 # Safiyya Muhsina M — Portfolio
 
-Personal portfolio of Safiyya Muhsina M, a Computer Science and Technology student exploring technology, product, business, marketing and project management.
+Personal portfolio of Safiyya Muhsina M, a final-year Computer Science and Technology student exploring technology, product, business, marketing and project management.
 
 Live site: <https://safiyyamuhsina.vercel.app>
 
@@ -37,7 +37,7 @@ public/images/        portrait and project screenshots
 
 ## Updating content
 
-Everything shown on the page lives in `data/portfolio.ts`: profile details, skills, projects, internship, education, hackathons, certificates, activities and languages.
+Everything shown on the page lives in `data/portfolio.ts`: profile and contact details (email, phone, LinkedIn, GitHub), skills, projects, internship, education, hackathons, certificates, activities and languages.
 
 - **Add a project link:** add `repo` / `demo` fields to a project in `data/portfolio.ts` and render them in `components/projects-section.tsx`. No links are shown today because none have been verified.
 - **Replace the portrait:** drop a new image into `public/images/` and update `images.portrait` in the data file.
