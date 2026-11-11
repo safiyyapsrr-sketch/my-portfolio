@@ -84,12 +84,6 @@ export const Search = (p: IconProps) => (
   </Base>
 );
 
-export const Spark = (p: IconProps) => (
-  <Base {...p}>
-    <path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18" />
-  </Base>
-);
-
 export const Mail = (p: IconProps) => (
   <Base {...p}>
     <rect x="3" y="5" width="18" height="14" rx="2.5" />

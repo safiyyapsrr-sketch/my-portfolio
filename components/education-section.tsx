@@ -15,7 +15,7 @@ export default function EducationSection() {
             <span className="cgpa__num" aria-label={`CGPA ${education.cgpa}`}>
               {education.cgpa}
             </span>
-            <span className="cgpa__label mono">CGPA · B.E.</span>
+            <span className="cgpa__label mono">CGPA · B.E. final year</span>
           </div>
 
           <ul className="edu-list">
@@ -26,7 +26,10 @@ export default function EducationSection() {
                 <p className="edu-row__meta">
                   {education.school}, {education.place}
                 </p>
-                <p className="edu-row__score">CGPA {education.cgpa}</p>
+                <p className="edu-row__facts">
+                  <span className="pill pill--accent">{education.status}</span>
+                  <span className="edu-row__score">CGPA {education.cgpa}</span>
+                </p>
               </div>
             </li>
 
@@ -37,7 +40,9 @@ export default function EducationSection() {
                 <p className="edu-row__meta">
                   {education.hsc.school}, {education.hsc.place}
                 </p>
-                <p className="edu-row__score">{education.hsc.score}</p>
+                <p className="edu-row__facts">
+                  <span className="edu-row__score">{education.hsc.score}</span>
+                </p>
               </div>
             </li>
           </ul>

@@ -23,9 +23,9 @@ const instrument = Instrument_Serif({
   display: "swap",
 });
 
-const title = `${profile.name} | Computer Science & Technology student`;
+const title = `${profile.name} | Final-year Computer Science & Technology student`;
 const description =
-  "Portfolio of Safiyya Muhsina M, a Computer Science and Technology student exploring technology, product, business, marketing and project management. Projects, internship, hackathons and leadership.";
+  "Portfolio of Safiyya Muhsina M, a final-year Computer Science and Technology student exploring technology, product, business, marketing and project management. Projects, internship, hackathons and leadership.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),

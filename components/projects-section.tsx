@@ -1,6 +1,6 @@
 import { profile, projects } from "@/data/portfolio";
 import { delay } from "@/lib/motion";
-import { ArrowUpRight, Spark } from "./icons";
+import { ArrowUpRight } from "./icons";
 import ProjectMedia from "./project-visuals";
 import SectionHeading from "./section-heading";
 
@@ -45,12 +45,7 @@ export default function ProjectsSection() {
                 <p className="project-sub">{project.subtitle}</p>
                 <p className="project-desc">{project.description}</p>
 
-                {project.badge ? (
-                  <p className="badge">
-                    <Spark />
-                    {project.badge}
-                  </p>
-                ) : null}
+                {project.badge ? <p className="badge">{project.badge}</p> : null}
 
                 <ul className="tags">
                   {project.tags.map((tag) => (
@@ -65,10 +60,7 @@ export default function ProjectsSection() {
         </div>
 
         <div className="projects-foot" data-reveal>
-          <p>
-            <span className="hero__dot" aria-hidden="true" />
-            More projects and explorations are in progress.
-          </p>
+          <p>More projects and explorations are in progress.</p>
           <a
             href={profile.github}
             className="btn btn--ghost"

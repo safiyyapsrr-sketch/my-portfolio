@@ -1,4 +1,4 @@
-import { aboutParagraphs, interests } from "@/data/portfolio";
+import { aboutParagraphs, education, interests } from "@/data/portfolio";
 import { delay } from "@/lib/motion";
 import SectionHeading from "./section-heading";
 
@@ -11,7 +11,17 @@ export default function AboutSection() {
             Curious by nature, <em>technical</em> by training.
           </SectionHeading>
 
-          <div data-reveal style={delay(120)}>
+          <div className="about__status" data-reveal style={delay(80)}>
+            <p className="mono">Currently</p>
+            <p className="about__status-title">
+              Final-year B.E. Computer Science &amp; Technology
+            </p>
+            <p>
+              {education.school}, {education.place}
+            </p>
+          </div>
+
+          <div data-reveal style={delay(160)}>
             <p className="interest-label mono">Where my interests meet</p>
             <ul className="tags">
               {interests.map((interest) => (

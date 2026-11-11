@@ -12,9 +12,9 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/safiyyamuhsina",
   github: "https://github.com/safiyyapsrr-sketch",
   siteUrl: "https://safiyyamuhsina.vercel.app",
-  role: "Computer Science & Technology student",
+  role: "Final-Year Computer Science and Technology Student",
   intro:
-    "I'm a Computer Science and Technology student exploring the intersection of technology, product, business, marketing and project management. I enjoy connecting people and ideas, understanding problems, communicating perspectives and turning possibilities into meaningful outcomes.",
+    "I'm a final-year Computer Science and Technology student exploring the intersection of technology, product, business, marketing and project management. I enjoy connecting people and ideas, understanding problems, communicating perspectives and turning possibilities into meaningful outcomes.",
 } as const;
 
 /** Headline split into words so the hero can reveal them one by one. */
@@ -48,7 +48,7 @@ export const images = {
   portrait: {
     src: "/images/portrait.jpg",
     width: 832,
-    height: 1248,
+    height: 1073,
     alt: "Portrait of Safiyya Muhsina M",
   },
   safepath: {
@@ -71,17 +71,6 @@ export const images = {
   },
 } as const;
 
-export const tickerWords = [
-  "Technology",
-  "Product",
-  "Business",
-  "Marketing",
-  "Project management",
-  "Operations",
-  "Communication",
-  "Growth",
-];
-
 export const aboutParagraphs = {
   lead: "I'm someone who enjoys connecting ideas, people, and possibilities. With a background in Computer Science, I'm curious about more than just how technology works. I'm equally interested in how it solves real-world problems, creates value, and helps businesses grow.",
   communication:
@@ -98,9 +87,10 @@ export const interests = [
   "Technology",
   "Product",
   "Project management",
-  "Business",
-  "Marketing & growth",
-  "Operations",
+  "Business & operations",
+  "Marketing & content",
+  "UI/UX design",
+  "AI & GenAI",
 ];
 
 export const skillGroups = [
@@ -130,6 +120,65 @@ export const skillGroups = [
     items: ["Data Structures", "AI & Machine Learning (fundamentals)"],
   },
 ] as const;
+
+export interface InterestArea {
+  title: string;
+  status: "In practice" | "Exploring";
+  text: string;
+}
+
+/** Wider interests. "In practice" is only used where the resume shows hands-on work. */
+export const interestAreas: InterestArea[] = [
+  {
+    title: "Product thinking & management",
+    status: "Exploring",
+    text: "Starting from the problem and the people affected, then shaping a practical solution. SafePath applies this by ranking routes on safety rather than speed.",
+  },
+  {
+    title: "Project management & coordination",
+    status: "In practice",
+    text: "Leading the SafePath team and coordinating college events as an Event Coordinator.",
+  },
+  {
+    title: "Product design & UI/UX",
+    status: "In practice",
+    text: "Rebuilt the WHBS website's navigation and information architecture around user-centred, clearly grouped content during my internship.",
+  },
+  {
+    title: "AI & machine learning",
+    status: "In practice",
+    text: "Built the YOLO and CNN pipeline for the animal intrusion detection project, on top of machine learning fundamentals.",
+  },
+  {
+    title: "Generative AI & AI-powered apps",
+    status: "Exploring",
+    text: "Interested in what AI-powered applications can do for everyday problems, such as the college chatbot project.",
+  },
+  {
+    title: "Business analysis & operations",
+    status: "Exploring",
+    text: "Curious about how businesses run and grow: processes, operations and the thinking behind decisions.",
+  },
+  {
+    title: "Marketing, content & social media",
+    status: "Exploring",
+    text: "Drawn to storytelling, content and growth, and to how a message reaches the right audience.",
+  },
+];
+
+export const aiTools = {
+  intro:
+    "Practical familiarity with AI tools, explored across academic projects, internship work and hackathons.",
+  tools: ["Claude", "Claude Code", "ChatGPT", "Other AI tools"],
+  uses: [
+    "Research",
+    "Brainstorming",
+    "Content creation",
+    "Project development",
+    "Website redesign",
+    "Productivity",
+  ],
+};
 
 export const strengths = [
   "Communication",
@@ -260,6 +309,7 @@ export const education = {
   school: "Vivekanandha College of Engineering for Women (Autonomous)",
   place: "Tiruchengode",
   period: "2023 – Present",
+  status: "Final year",
   cgpa: "8.01",
   hsc: {
     title: "Higher Secondary (HSC)",

@@ -2,18 +2,17 @@ import Image from "next/image";
 import type { CSSProperties } from "react";
 import { headlineWords, images, profile } from "@/data/portfolio";
 import { delay } from "@/lib/motion";
-import { ArrowDown, GitHub, LinkedIn, Pin } from "./icons";
+import { ArrowDown, GitHub, LinkedIn } from "./icons";
 
 export default function HeroSection() {
   return (
     <section id="home" className="hero" aria-labelledby="hero-title">
       <div className="wrap hero__grid">
         <div>
-          <p className="hero__eyebrow mono" data-anim style={delay(60)}>
-            <span className="hero__dot" aria-hidden="true" />
-            <strong>{profile.name}</strong>
-            <span>{profile.role}</span>
-          </p>
+          <div className="hero__id" data-anim style={delay(60)}>
+            <p className="hero__name">{profile.name}</p>
+            <p className="hero__role mono">{profile.role}</p>
+          </div>
 
           <h1 id="hero-title" className="hero__title">
             {headlineWords.map((word, index) => (
@@ -43,7 +42,6 @@ export default function HeroSection() {
 
         <div className="hero-visual" data-anim style={delay(350)}>
           <div className="hero-visual__sun" aria-hidden="true" />
-          <div className="hero-visual__ring" aria-hidden="true" />
 
           <div className="hero-visual__portrait">
             <Image
@@ -51,16 +49,11 @@ export default function HeroSection() {
               alt={images.portrait.alt}
               width={images.portrait.width}
               height={images.portrait.height}
-              sizes="(min-width: 960px) 360px, 80vw"
+              sizes="(min-width: 960px) 400px, 85vw"
               loading="eager"
               fetchPriority="high"
             />
           </div>
-
-          <p className="hero-chip">
-            <Pin />
-            Tiruchengode, India
-          </p>
 
           <figure className="hero-card hero-card--b">
             <Image
@@ -68,9 +61,8 @@ export default function HeroSection() {
               alt={images.whbsHero.alt}
               width={images.whbsHero.width}
               height={images.whbsHero.height}
-              sizes="(min-width: 960px) 190px, 40vw"
+              sizes="(min-width: 960px) 170px, 36vw"
             />
-            <figcaption className="mono">WHBS redesign</figcaption>
           </figure>
 
           <figure className="hero-card hero-card--a">
@@ -79,9 +71,8 @@ export default function HeroSection() {
               alt={images.safepath.alt}
               width={images.safepath.width}
               height={images.safepath.height}
-              sizes="(min-width: 960px) 250px, 55vw"
+              sizes="(min-width: 960px) 210px, 46vw"
             />
-            <figcaption className="mono">SafePath</figcaption>
           </figure>
         </div>
       </div>

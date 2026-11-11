@@ -10,7 +10,6 @@ import Navbar from "@/components/navbar";
 import ProjectsSection from "@/components/projects-section";
 import RevealObserver from "@/components/reveal-observer";
 import SkillsSection from "@/components/skills-section";
-import Ticker from "@/components/ticker";
 
 export default function Page() {
   return (
@@ -21,7 +20,6 @@ export default function Page() {
       <Navbar />
       <main id="main">
         <HeroSection />
-        <Ticker />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
