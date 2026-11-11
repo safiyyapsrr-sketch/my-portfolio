@@ -9,6 +9,8 @@ export const profile = {
   initials: "SM",
   location: "Tiruchengode, Tamil Nadu, India",
   email: "safiyyapsrr@gmail.com",
+  phone: "+918122960103",
+  phoneDisplay: "+91 81229 60103",
   linkedin: "https://www.linkedin.com/in/safiyyamuhsina",
   github: "https://github.com/safiyyapsrr-sketch",
   siteUrl: "https://safiyyamuhsina.vercel.app",

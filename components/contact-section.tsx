@@ -1,6 +1,6 @@
 import { profile } from "@/data/portfolio";
 import { delay } from "@/lib/motion";
-import { ArrowUpRight, GitHub, LinkedIn, Pin } from "./icons";
+import { ArrowUpRight, GitHub, LinkedIn, Phone, Pin } from "./icons";
 
 export default function ContactSection() {
   return (
@@ -32,6 +32,14 @@ export default function ContactSection() {
         </a>
 
         <div className="contact__row" data-reveal style={delay(320)}>
+          <a
+            className="btn"
+            href={`tel:${profile.phone}`}
+            aria-label={`Call ${profile.phoneDisplay}`}
+          >
+            <Phone />
+            {profile.phoneDisplay}
+          </a>
           <a
             className="btn"
             href={profile.linkedin}

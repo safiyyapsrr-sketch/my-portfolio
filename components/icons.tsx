@@ -52,6 +52,12 @@ export const Pin = (p: IconProps) => (
   </Base>
 );
 
+export const Phone = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.1 6.1l1.4-2.3L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4Z" />
+  </Base>
+);
+
 export const Sun = (p: IconProps) => (
   <Base {...p}>
     <circle cx="12" cy="12" r="4" />
