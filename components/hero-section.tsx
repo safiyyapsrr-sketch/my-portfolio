@@ -55,25 +55,7 @@ export default function HeroSection() {
             />
           </div>
 
-          <figure className="hero-card hero-card--b">
-            <Image
-              src={images.whbsHero.src}
-              alt={images.whbsHero.alt}
-              width={images.whbsHero.width}
-              height={images.whbsHero.height}
-              sizes="(min-width: 960px) 170px, 36vw"
-            />
-          </figure>
 
-          <figure className="hero-card hero-card--a">
-            <Image
-              src={images.safepath.src}
-              alt={images.safepath.alt}
-              width={images.safepath.width}
-              height={images.safepath.height}
-              sizes="(min-width: 960px) 210px, 46vw"
-            />
-          </figure>
         </div>
       </div>
 
