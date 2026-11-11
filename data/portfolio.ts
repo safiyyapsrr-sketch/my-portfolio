@@ -71,6 +71,12 @@ export const images = {
     height: 566,
     alt: "Redesigned White House Business Solutions hero slider showing the Content Transformation slide",
   },
+  whbsLetter: {
+    src: "/images/whbs-letter.webp",
+    width: 972,
+    height: 870,
+    alt: "Internship completion letter from White House Business Solutions Pvt Ltd, Chennai, dated 3 July 2026, confirming Safiyya Muhsina M's web development internship from 15 June to 3 July 2026. Registration number and signature are hidden.",
+  },
 } as const;
 
 export const aboutParagraphs = {
@@ -296,7 +302,7 @@ export const experience = {
   role: "Web Developer Intern",
   company: "White House Business Solutions Pvt. Ltd.",
   location: "Chennai",
-  period: "June 2026 – July 2026",
+  period: "15 June – 3 July 2026",
   project: "Company website redesign",
   bullets: [
     "Redesigned the company's 14-page website from scratch in Next.js, React, TypeScript, Tailwind CSS and Framer Motion, delivering a modern, premium interface that presents the company's credibility.",

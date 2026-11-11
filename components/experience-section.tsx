@@ -1,4 +1,5 @@
-import { experience } from "@/data/portfolio";
+import Image from "next/image";
+import { experience, images } from "@/data/portfolio";
 import { delay } from "@/lib/motion";
 import { ArrowRight } from "./icons";
 import SectionHeading from "./section-heading";
@@ -42,6 +43,29 @@ export default function ExperienceSection() {
                 See the redesign
                 <ArrowRight />
               </a>
+
+              <figure className="tl-letter">
+                <a
+                  href={images.whbsLetter.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tl-letter__frame"
+                  aria-label="Open the internship completion letter in a new tab"
+                >
+                  <Image
+                    src={images.whbsLetter.src}
+                    alt={images.whbsLetter.alt}
+                    width={images.whbsLetter.width}
+                    height={images.whbsLetter.height}
+                    sizes="(min-width: 960px) 460px, 90vw"
+                  />
+                </a>
+                <figcaption className="tl-letter__cap">
+                  <strong>Internship completion letter</strong>
+                  Issued by White House Business Solutions Pvt Ltd, 3 July 2026.
+                  Registration number and signature hidden. Tap to enlarge.
+                </figcaption>
+              </figure>
             </div>
           </article>
 

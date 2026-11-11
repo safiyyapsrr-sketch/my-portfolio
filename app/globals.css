@@ -1403,6 +1403,42 @@
     color: var(--accent-text);
     border-color: var(--accent-text);
   }
+  .tl-letter {
+    max-width: 460px;
+    margin-top: 2.2rem;
+  }
+  .tl-letter__frame {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--line-2);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 18px 40px -24px rgb(0 0 0 / 0.55);
+    transition:
+      transform 0.3s ease,
+      border-color 0.25s;
+  }
+  .tl-letter__frame:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-text);
+  }
+  .tl-letter__frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .tl-letter__cap {
+    display: grid;
+    gap: 0.2rem;
+    margin-top: 0.8rem;
+    color: var(--ink-2);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .tl-letter__cap strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
   .tl-next-text {
     max-width: 34rem;
     margin-top: 0.8rem;
