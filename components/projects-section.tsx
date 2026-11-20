@@ -4,9 +4,10 @@ import { ArrowUpRight } from "./icons";
 import ProjectMedia from "./project-visuals";
 import SectionHeading from "./section-heading";
 
-const spans: Record<string, "5" | "6" | "7"> = {
+const spans: Record<string, "5" | "6" | "7" | "12"> = {
   safepath: "7",
   whbs: "5",
+  campusmate: "12",
   "animal-intrusion": "5",
   "movie-search": "7",
   chatbot: "6",
@@ -55,16 +56,31 @@ export default function ProjectsSection() {
                   ))}
                 </ul>
 
-                {project.liveUrl ? (
-                  <a
-                    href={project.liveUrl}
-                    className="tl-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visit live site
-                    <ArrowUpRight />
-                  </a>
+                {project.liveUrl || project.repoUrl ? (
+                  <div className="tl-links">
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        className="tl-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Visit live site
+                        <ArrowUpRight />
+                      </a>
+                    ) : null}
+                    {project.repoUrl ? (
+                      <a
+                        href={project.repoUrl}
+                        className="tl-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View on GitHub
+                        <ArrowUpRight />
+                      </a>
+                    ) : null}
+                  </div>
                 ) : null}
               </div>
             </article>

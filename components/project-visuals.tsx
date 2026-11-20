@@ -126,6 +126,29 @@ export default function ProjectMedia({ visual }: { visual: ProjectVisual }) {
           </div>
         </div>
       );
+    case "campusmate":
+      return (
+        <div className="project-media project-media--shots">
+          <div className="shot shot--main">
+            <Image
+              src={images.campusmateHome.src}
+              alt={images.campusmateHome.alt}
+              width={images.campusmateHome.width}
+              height={images.campusmateHome.height}
+              sizes="(min-width: 760px) 400px, 80vw"
+            />
+          </div>
+          <div className="shot shot--back">
+            <Image
+              src={images.campusmateChat.src}
+              alt={images.campusmateChat.alt}
+              width={images.campusmateChat.width}
+              height={images.campusmateChat.height}
+              sizes="(min-width: 760px) 290px, 55vw"
+            />
+          </div>
+        </div>
+      );
     case "pipeline":
       return (
         <div className="project-media project-media--accent">

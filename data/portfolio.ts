@@ -71,6 +71,18 @@ export const images = {
     height: 566,
     alt: "Redesigned White House Business Solutions hero slider showing the Content Transformation slide",
   },
+  campusmateHome: {
+    src: "/images/campusmate-home.webp",
+    width: 1050,
+    height: 520,
+    alt: "CampusMate AI landing page: Ask your college anything, with an example question about the attendance requirement answered with a cited source",
+  },
+  campusmateChat: {
+    src: "/images/campusmate-chat.webp",
+    width: 1360,
+    height: 627,
+    alt: "CampusMate AI chat answering which departments and programmes are available at the college",
+  },
   whbsLetter: {
     src: "/images/whbs-letter.webp",
     width: 972,
@@ -202,6 +214,7 @@ export const strengths = [
 export type ProjectVisual =
   | "safepath"
   | "whbs"
+  | "campusmate"
   | "pipeline"
   | "search"
   | "chat"
@@ -217,9 +230,10 @@ export interface Project {
   tags: string[];
   badge?: string;
   liveUrl?: string;
+  repoUrl?: string;
 }
 
-/** Ordered by relevance and presentation strength. Only verified live links (liveUrl) are listed. */
+/** Ordered by relevance and presentation strength. Only verified links (liveUrl, repoUrl) are listed. */
 export const projects: Project[] = [
   {
     id: "safepath",
@@ -248,6 +262,17 @@ export const projects: Project[] = [
       "Redesigned the company's entire 14-page website from scratch as a modern, premium interface. I reorganised the navigation around clear content groupings so each business line has its own section, and built a library of 20+ reusable, responsive components with accessibility and performance in mind.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://whbs-website-redesign.vercel.app",
+  },
+  {
+    id: "campusmate",
+    visual: "campusmate",
+    category: "AI · RAG chatbot · Django",
+    title: "CampusMate AI",
+    subtitle: "Smart college information and student support assistant",
+    description:
+      "A Django web app that answers student questions on attendance, exams, placements and regulations from the college's own documents. It uses retrieval-augmented generation: documents are split into passages, embedded and indexed with FAISS, and the best matches are sent to an LLM that writes the answer and lists its source documents. It has student accounts, saved chat history and admin document upload, and says so when something is not in the documents instead of guessing. Loaded with 15 college documents (83 passages) and run end to end on Google Colab.",
+    tags: ["Django", "RAG", "FAISS", "Sentence-Transformers", "LangChain", "LLM API"],
+    repoUrl: "https://github.com/safiyyapsrr-sketch/CampusMate-AI",
   },
   {
     id: "animal-intrusion",
