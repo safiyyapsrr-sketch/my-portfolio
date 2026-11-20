@@ -1403,6 +1403,14 @@
     color: var(--accent-text);
     border-color: var(--accent-text);
   }
+  .tl-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.8rem;
+  }
+  .project-body > .tl-link {
+    align-self: flex-start;
+  }
   .tl-letter {
     max-width: 460px;
     margin-top: 2.2rem;

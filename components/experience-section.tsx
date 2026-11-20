@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { experience, images } from "@/data/portfolio";
 import { delay } from "@/lib/motion";
-import { ArrowRight } from "./icons";
+import { ArrowRight, ArrowUpRight } from "./icons";
 import SectionHeading from "./section-heading";
 
 export default function ExperienceSection() {
@@ -39,10 +39,21 @@ export default function ExperienceSection() {
                 ))}
               </ul>
 
-              <a href="#project-whbs" className="tl-link">
-                See the redesign
-                <ArrowRight />
-              </a>
+              <div className="tl-links">
+                <a href="#project-whbs" className="tl-link">
+                  See the redesign
+                  <ArrowRight />
+                </a>
+                <a
+                  href="https://whbs-website-redesign.vercel.app"
+                  className="tl-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit the live site
+                  <ArrowUpRight />
+                </a>
+              </div>
 
               <figure className="tl-letter">
                 <a

@@ -54,6 +54,18 @@ export default function ProjectsSection() {
                     </li>
                   ))}
                 </ul>
+
+                {project.liveUrl ? (
+                  <a
+                    href={project.liveUrl}
+                    className="tl-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit live site
+                    <ArrowUpRight />
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}

@@ -216,9 +216,10 @@ export interface Project {
   description: string;
   tags: string[];
   badge?: string;
+  liveUrl?: string;
 }
 
-/** Ordered by relevance and presentation strength. No repo/demo links are listed because none are verified. */
+/** Ordered by relevance and presentation strength. Only verified live links (liveUrl) are listed. */
 export const projects: Project[] = [
   {
     id: "safepath",
@@ -246,6 +247,7 @@ export const projects: Project[] = [
     description:
       "Redesigned the company's entire 14-page website from scratch as a modern, premium interface. I reorganised the navigation around clear content groupings so each business line has its own section, and built a library of 20+ reusable, responsive components with accessibility and performance in mind.",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://whbs-website-redesign.vercel.app",
   },
   {
     id: "animal-intrusion",
